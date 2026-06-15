@@ -1,6 +1,6 @@
 # React SaaS Course — Project Codebases
 
-The hands-on project codebases for the **React SaaS course** — a full-depth course on building a production SaaS with the minimum-viable 2026 stack (TypeScript, React 19, Next.js 16, Postgres + Drizzle, Better Auth, Stripe, and more). The course itself (lessons, the authoring pipeline) lives in the separate `react-saas-course` repo; this repo is just the code you build chapter by chapter.
+The hands-on project codebases for the **React SaaS course** — a full-depth course on building a production SaaS with the minimum-viable 2026 stack (TypeScript, React 19, Next.js 16, Postgres + Drizzle, Better Auth, Stripe, and more). The course itself (lessons, the authoring pipeline) lives in the separate [`react-saas-course`](https://github.com/terencicp/react-saas-course) repo; this repo is just the code you build chapter by chapter.
 
 ## Layout
 
