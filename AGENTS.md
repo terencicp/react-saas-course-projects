@@ -20,7 +20,7 @@ The lessons that specify each project live in the sibling `react-saas-course` re
 
 ## Cross-project consistency
 
-Projects form a chain: most starters are derived from an earlier chapter's `solution/` (e.g. `108 ← 062`, `100 ← 062 ← 059 ← 055 ← …`). A given chapter's `start/README.md` names what it builds on; the canonical map is `documentation/content/overview/Project dependencies.md` in the course repo. A change to shared code (schema, auth, the invoices surface) may need to be carried forward consistently across the chain — check before assuming a project is isolated.
+Projects form a chain: most starters are derived from an earlier chapter's `solution/` (e.g. `108 ← 062`, `100 ← 062 ← 059 ← 055 ← …`). A given chapter's `start/README.md` names what it builds on. A change to shared code (schema, auth, the invoices surface) may need to be carried forward consistently across the chain — check before assuming a project is isolated.
 
 Within one chapter, `start/` and `solution/` are the same app at two points in time: `solution/` is `start/` with the `// TODO(L<n>)` bodies filled in. Keep them aligned — a fix to one usually belongs in the other.
 
