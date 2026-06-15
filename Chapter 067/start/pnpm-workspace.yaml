@@ -1,0 +1,11 @@
+onlyBuiltDependencies:
+  - sharp
+allowBuilds:
+  sharp: true
+  esbuild: false
+  # Pulled in by @trigger.dev/sdk + the trigger.dev CLI; neither needs its build
+  # step for our use (the worker bundles via the CLI), so acknowledge-but-skip.
+  protobufjs: false
+  '@depot/cli': false
+overrides:
+  kysely: 0.28.17

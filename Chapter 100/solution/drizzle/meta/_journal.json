@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1781473311544,
+      "tag": "0000_init_auth",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1781473322091,
+      "tag": "0001_create_app_role",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1781473348525,
+      "tag": "0002_add_audit_logs",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1781473355891,
+      "tag": "0003_force_audit_rls",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1781473372509,
+      "tag": "0004_add_invoices",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1781473847152,
+      "tag": "0005_expand_subtotal_tax",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1781475269187,
+      "tag": "0006_set_subtotal_tax_not_null",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1781476622708,
+      "tag": "0007_contract_total",
+      "breakpoints": true
+    }
+  ]
+}

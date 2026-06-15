@@ -1,0 +1,31 @@
+# SEEDED AUDIT DEFECT #7 (finding 7) — dep-hygiene gap (081 L8).
+#
+# The three flags below explicitly OVERRIDE the safe pnpm 11+ defaults:
+#   - minimumReleaseAge: 0      → installs a release the moment it ships (no 24h window)
+#   - blockExoticSubdeps: false → allows git/tarball/exotic transitive specs
+#   - strictDepBuilds: false    → does not fail an install when an un-acknowledged
+#                                 dependency wants to run a build script
+# A grep finds these with no install step — this is the load-bearing, deterministic
+# evidence. The healthy shape keeps the defaults ON (minimumReleaseAge: 1440,
+# blockExoticSubdeps: true, strictDepBuilds: true). The pnpm-audit pin is the
+# corroborating secondary evidence; pnpm settings live HERE, never in .npmrc. The
+# target ships the bug on purpose; do not "fix" it here.
+minimumReleaseAge: 0
+blockExoticSubdeps: false
+strictDepBuilds: false
+# The healthy build allow-list stays correct so `next build` passes despite
+# strictDepBuilds: false — the seeded gap is the three flags above + the audit pin,
+# NEVER the build allow-list.
+onlyBuiltDependencies:
+  - sharp
+allowBuilds:
+  sharp: true
+  esbuild: false
+  # Pulled in by @trigger.dev/sdk + the trigger.dev CLI; neither needs its build
+  # step for our use (the worker bundles via the CLI), so acknowledge-but-skip.
+  protobufjs: false
+  '@depot/cli': false
+  # Pulled in transitively (posthog-js); its build step is not needed here.
+  core-js: false
+overrides:
+  kysely: 0.28.17

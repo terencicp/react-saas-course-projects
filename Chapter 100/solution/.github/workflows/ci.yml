@@ -1,0 +1,98 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    env:
+      SKIP_ENV_VALIDATION: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec tsc --noEmit
+
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      SKIP_ENV_VALIDATION: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec biome ci .
+
+  test:
+    runs-on: ubuntu-latest
+    env:
+      SKIP_ENV_VALIDATION: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # The build job runs the env validator for real — a missing var fails here,
+      # exactly as it does in the Vercel build log. Never SKIP_ENV_VALIDATION here.
+      - run: pnpm build
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/app
+          DATABASE_URL_UNPOOLED: postgres://postgres:postgres@localhost:5432/app
+          BETTER_AUTH_SECRET: ci-only-better-auth-secret-please-rotate
+          BETTER_AUTH_URL: http://localhost:3000
+          RESEND_API_KEY: re_ci_placeholder
+          SENTRY_DSN: https://ci@example.ingest.sentry.io/0
+          APP_URL: http://localhost:3000
+          NEXT_PUBLIC_APP_NAME: Invoices
+          NEXT_PUBLIC_APP_URL: http://localhost:3000
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm audit --audit-level=high
+
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: reviewdog/action-actionlint@v1

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ch077-solution",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["exec", "next", "start", "--port", "3077"],
+      "port": 3077
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Supply-chain defaults (082 finding 7, pre-fixed): pnpm 11+'s safe defaults stay ON.
+#   - minimumReleaseAge: 1440   → 24h pre-install window (the only pre-install defense)
+#   - blockExoticSubdeps: true  → refuse git/tarball/exotic transitive specs
+#   - strictDepBuilds: true     → fail an install on an un-acknowledged build script
+# These are read from this workspace file, never .npmrc. allowBuilds is the reviewed
+# allow-list of the few packages whose build steps are actually needed.
+minimumReleaseAge: 1440
+blockExoticSubdeps: true
+strictDepBuilds: true
+onlyBuiltDependencies:
+  - sharp
+allowBuilds:
+  sharp: true
+  esbuild: false
+  # Pulled in by @trigger.dev/sdk + the trigger.dev CLI; neither needs its build
+  # step for our use (the worker bundles via the CLI), so acknowledge-but-skip.
+  protobufjs: false
+  '@depot/cli': false
+  # Pulled in transitively (posthog-js); its build step is not needed here.
+  core-js: false
+  # Unit-19 addition: @sentry/nextjs drags in @sentry/cli, whose build downloads a
+  # source-map-upload binary the pipeline never uses. Acknowledge-but-skip so a cold
+  # install / next build does not hard-fail ERR_PNPM_IGNORED_BUILDS under
+  # strictDepBuilds: true (same mechanism as sharp/esbuild).
+  '@sentry/cli': false
+overrides:
+  kysely: 0.28.17

@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "brand": "Invoices",
+    "list": "List",
+    "inspector": "Inspector",
+    "home": "Home",
+    "pricing": "Pricing",
+    "features": "Features",
+    "app": "App"
+  },
+  "locale-switcher": {
+    "label": "Language",
+    "en-US": "English (US)",
+    "en-GB": "English (UK)",
+    "fr-FR": "Français"
+  },
+  "invoices": {
+    "list": {
+      "title": "Invoices",
+      "count": "{count, plural, =0 {No invoices} one {# invoice} other {# invoices}}",
+      "empty": "No invoices match these filters.",
+      "selectPrompt": "Select an invoice to see its detail.",
+      "columns": {
+        "number": "Number",
+        "customer": "Customer",
+        "status": "Status",
+        "amount": "Amount",
+        "date": "Date",
+        "due": "Due"
+      },
+      "status": {
+        "draft": "Draft",
+        "sent": "Sent",
+        "paid": "Paid",
+        "overdue": "Overdue"
+      },
+      "tabs": {
+        "active": "Active",
+        "archived": "Archived",
+        "all": "All"
+      },
+      "toolbar": {
+        "statusPlaceholder": "Status",
+        "statusAll": "All statuses",
+        "sortPlaceholder": "Sort",
+        "sort": {
+          "newest": "Newest first",
+          "oldest": "Oldest first",
+          "totalDesc": "Total: high to low",
+          "totalAsc": "Total: low to high",
+          "customerDesc": "Customer: Z–A",
+          "customerAsc": "Customer: A–Z"
+        },
+        "searchPlaceholder": "Search…"
+      },
+      "pagination": {
+        "label": "Pagination",
+        "first": "First page",
+        "next": "Next"
+      },
+      "badge": {
+        "deleted": "Deleted",
+        "archived": "Archived"
+      },
+      "actions": {
+        "label": "Row actions",
+        "edit": "Edit",
+        "archive": "Archive",
+        "restore": "Restore",
+        "undelete": "Restore deleted",
+        "delete": "Delete"
+      }
+    }
+  },
+  "marketing": {
+    "meta": {
+      "home": {
+        "title": "Invoices for teams that ship worldwide",
+        "description": "A tri-locale, timezone-aware invoices workspace — every string, currency, and date localized from day one."
+      },
+      "pricing": {
+        "title": "Pricing",
+        "description": "Simple, transparent pricing in your currency and your language."
+      },
+      "features": {
+        "title": "Features",
+        "description": "Locale routing, currency-from-data, timezone-aware dates, and SEO-grade hreflang built in."
+      }
+    },
+    "home": {
+      "heading": "Invoices, localized from day one",
+      "subheading": "One workspace, three locales, every date in the viewer's timezone.",
+      "cta": "View the invoices list"
+    },
+    "pricing": {
+      "heading": "Pricing"
+    },
+    "features": {
+      "heading": "Features"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "brand": "Factures",
+    "list": "Liste",
+    "inspector": "Inspecteur",
+    "home": "Accueil",
+    "pricing": "Tarifs",
+    "features": "Fonctionnalités",
+    "app": "Application"
+  },
+  "locale-switcher": {
+    "label": "Langue",
+    "en-US": "English (US)",
+    "en-GB": "English (UK)",
+    "fr-FR": "Français"
+  },
+  "invoices": {
+    "list": {
+      "title": "Factures",
+      "count": "{count, plural, =0 {Aucune facture} one {# facture} many {# de factures} other {# factures}}",
+      "empty": "Aucune facture ne correspond à ces filtres.",
+      "selectPrompt": "Sélectionnez une facture pour voir son détail.",
+      "columns": {
+        "number": "Numéro",
+        "customer": "Client",
+        "status": "Statut",
+        "amount": "Montant",
+        "date": "Date",
+        "due": "Échéance"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "sent": "Envoyée",
+        "paid": "Réglée",
+        "overdue": "En retard"
+      },
+      "tabs": {
+        "active": "Actives",
+        "archived": "Archivées",
+        "all": "Toutes"
+      },
+      "toolbar": {
+        "statusPlaceholder": "Statut",
+        "statusAll": "Tous les statuts",
+        "sortPlaceholder": "Trier",
+        "sort": {
+          "newest": "Plus récentes d’abord",
+          "oldest": "Plus anciennes d’abord",
+          "totalDesc": "Montant : décroissant",
+          "totalAsc": "Montant : croissant",
+          "customerDesc": "Client : Z–A",
+          "customerAsc": "Client : A–Z"
+        },
+        "searchPlaceholder": "Rechercher…"
+      },
+      "pagination": {
+        "label": "Pagination",
+        "first": "Première page",
+        "next": "Suivant"
+      },
+      "badge": {
+        "deleted": "Supprimée",
+        "archived": "Archivée"
+      },
+      "actions": {
+        "label": "Actions de la ligne",
+        "edit": "Modifier",
+        "archive": "Archiver",
+        "restore": "Restaurer",
+        "undelete": "Restaurer la supprimée",
+        "delete": "Supprimer"
+      }
+    }
+  },
+  "marketing": {
+    "meta": {
+      "home": {
+        "title": "Des factures pour les équipes qui livrent dans le monde entier",
+        "description": "Un espace de facturation trilingue et sensible au fuseau horaire — chaque texte, devise et date localisés dès le premier jour."
+      },
+      "pricing": {
+        "title": "Tarifs",
+        "description": "Une tarification simple et transparente, dans votre devise et votre langue."
+      },
+      "features": {
+        "title": "Fonctionnalités",
+        "description": "Routage par locale, devise issue des données, dates sensibles au fuseau horaire et hreflang de qualité SEO intégrés."
+      }
+    },
+    "home": {
+      "heading": "Des factures, localisées dès le premier jour",
+      "subheading": "Un espace, trois locales, chaque date dans le fuseau horaire du lecteur.",
+      "cta": "Voir la liste des factures"
+    },
+    "pricing": {
+      "heading": "Tarifs"
+    },
+    "features": {
+      "heading": "Fonctionnalités"
+    }
+  }
+}
